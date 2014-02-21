@@ -23,4 +23,4 @@ Keys:
 6: { 0, 2, 17, 1, 1, 84, 2, 1,  1,  1,  18,  1,  1,  1,  18,   1 } - ExtFileChooseIdConfig.java
 7: { 0, 1,  2, 3, 4,  5, 6, 7,  8,  9,  10, 11, 12, 13,  14,  15 } - DownloadLinkStorable.java
 
-D:\Code\selfcode\jDecrypt\binary>
+D:\Code\selfcode\jDecrypt\binary> 
