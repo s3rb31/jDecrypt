@@ -5,7 +5,7 @@
 
 #pragma comment(lib, "advapi32.lib")
 
-CryptAES::CryptAES(BYTE *pKey)
+CryptAES::CryptAES(BYTE *pKey, BYTE *pIV)
 {
 	this->hProv = NULL;
 	this->hKey = NULL;
@@ -27,7 +27,7 @@ CryptAES::CryptAES(BYTE *pKey)
 			DWORD dwMode = CRYPT_MODE_CBC,
 				dwPadding = PKCS5_PADDING;
 
-			CryptSetKeyParam(this->hKey, KP_IV, pKey, 0);
+			CryptSetKeyParam(this->hKey, KP_IV, pIV, 0);
 			CryptSetKeyParam(this->hKey, KP_MODE, reinterpret_cast<BYTE*>(&dwMode), 0);
 			CryptSetKeyParam(this->hKey, KP_PADDING, reinterpret_cast<BYTE*>(&dwPadding), 0);
 		}

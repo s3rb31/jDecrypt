@@ -17,7 +17,7 @@ public:
 	};
 
 	~CryptAES();
-	CryptAES(BYTE *pKey);
+	CryptAES(BYTE *pKey, BYTE *pIV);
 	
 	int Encrypt(BYTE *pData, DWORD *pdwDataSize, DWORD dwBufferSize, BOOL bFinal);
 	int Decrypt(BYTE *pData, DWORD *pdwDataSize, BOOL bFinal);

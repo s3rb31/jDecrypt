@@ -29,9 +29,9 @@ public:
 
 	JHost(const char *pName);
 
+	size_t size();
 	void pushAccount(JAccount Account);
-	
-	std::string getSize();
+		
 	std::string getHost();	
 	std::string getAccounts();
 };

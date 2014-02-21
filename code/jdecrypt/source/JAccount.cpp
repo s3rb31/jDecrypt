@@ -1,8 +1,7 @@
 #include <string>
 #include "JTypes.h"
 
-JAccount::JAccount(const picojson::object &account) 
-	: data(account) { }
+JAccount::JAccount(const picojson::object &account) : data(account) { }
 
 bool JAccount::isUsable()
 {

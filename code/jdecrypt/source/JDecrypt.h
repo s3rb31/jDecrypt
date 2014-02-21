@@ -1,15 +1,20 @@
 #include <string>
 #include <windows.h>
 
-template<typename T>
-void ReturnError(int retcode, T err, char *func);
+using namespace std;
+
+template<typename T> 
+void ReturnError(int retcode, T err, char *func, bool bHex = false);
 
 #include "FileIO.h"
+
+void WriteOutputToFile(string strOutput, bool bHTML);
+
 #include "CryptAES.h"
 
-std::basic_string<BYTE> ReadAndDecryptEJS(const char *pFile);
+string ReadAndDecryptEJS(string strFile, int iKeyID, bool bNoIV);
 
 #include "JTypes.h"
 
-void OutputEJSAsHTML(std::vector<JHost> vHosts);
-std::vector<JHost> ParseEJS(const BYTE *pData, DWORD dwDataSize);
+vector<JHost> ParseEJS(const char *pData, DWORD dwDataSize);
+string BuildHTMLExport(vector<JHost> vHosts);

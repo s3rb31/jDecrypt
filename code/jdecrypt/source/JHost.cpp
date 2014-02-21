@@ -2,20 +2,16 @@
 
 #include "JTypes.h"
 
-JHost::JHost(const char *pName)
-	: strHost(pName) { }
+JHost::JHost(const char *pName) : strHost(pName) { }
 
 void JHost::pushAccount(JAccount Account)
 { 
 	this->vAccounts.push_back(Account); 
 }
 
-std::string JHost::getSize()
+size_t JHost::size()
 {
-	std::stringstream sstr;
-	sstr << this->vAccounts.size();
-
-	return sstr.str();
+	return this->vAccounts.size();
 }
 
 std::string JHost::getHost()

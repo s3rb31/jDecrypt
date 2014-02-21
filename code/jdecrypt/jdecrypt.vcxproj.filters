@@ -13,11 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Quelldateien\JTypes">
-      <UniqueIdentifier>{899b1706-23da-489c-afeb-40952a4977fb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headerdateien\Libs">
       <UniqueIdentifier>{8975146e-8855-4974-b57a-cf9d8d2bc3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Libs">
+      <UniqueIdentifier>{fc4e83c9-ec97-4f3d-a8d8-b185f6afd3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Libs\JTypes">
+      <UniqueIdentifier>{899b1706-23da-489c-afeb-40952a4977fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -41,23 +44,23 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\CryptAES.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="source\Main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="source\FileIO.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="source\JDecrypt.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="source\JHost.cpp">
-      <Filter>Quelldateien\JTypes</Filter>
+      <Filter>Quelldateien\Libs\JTypes</Filter>
     </ClCompile>
     <ClCompile Include="source\JAccount.cpp">
-      <Filter>Quelldateien\JTypes</Filter>
+      <Filter>Quelldateien\Libs\JTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CryptAES.cpp">
+      <Filter>Quelldateien\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FileIO.cpp">
+      <Filter>Quelldateien\Libs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
