@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 		break;
 	}
 
-	if (iKeyID < 1 || iKeyID > 8)
+	if (iKeyID < 1 || iKeyID > 7)
 	{
 		cout << "Try one of those:" << endl;
 		PrintKeys();
@@ -80,7 +80,7 @@ void PrintUsage(const char *pFileName)
 		<< "Coded bY S3RB31" << endl << endl
 		<< "Usage: \t\t" << pFileName << ".exe [ARGS] [FILE]" << endl << endl
 		<< "-html \t\t- Export to HTML (only AccountSettings.accounts.ejs)" << endl
-		<< "-keyid [KeyID]\t- Set AES Key (1-8, 1 = default)" << endl
+		<< "-keyid [KeyID]\t- Set AES Key (1-7, 1 = default)" << endl
 		<< "-noiv \t\t- Use zero as IV" << endl
 		<< "-showkeys \t- Show implemented AES keys" << endl;
 }
