@@ -5,7 +5,7 @@
 #include "HeaderImage.h"
 
 BYTE pKEY[8][16] =
-{
+{ 
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 1, 6, 4, 5, 2, 7, 4, 3, 12, 61, 14, 75, -2, -7, -44, 33 },	// AccountSettings.java
 	{ 2, 4, 4, 5, 2, 7, 4, 3, 12, 61, 14, 75, -2, -7, -44, 33 },	// AuthenticationControllerSettings.java

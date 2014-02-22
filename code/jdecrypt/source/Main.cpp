@@ -1,6 +1,6 @@
 #include "JDecrypt.h"
 
-void PrintKeys();
+void PrintKeys(); 
 void PrintUsage(const char *pFileName);
 
 int main(int argc, char **argv)
