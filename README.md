@@ -8,7 +8,7 @@ Usage:
 	  
 	  Usage:          jdecrypt.exe.exe [ARGS] [FILE]
 	  -html           - Export to HTML (only AccountSettings.accounts.ejs)
-	  -keyid [KeyID]  - Set AES Key (1-8, 1 = default)
+	  -keyid [KeyID]  - Set AES Key (1-7, 1 = default)
 	  -noiv           - Use zero as IV
 	  -showkeys       - Show implemented AES keys
 	  
