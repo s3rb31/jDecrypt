@@ -30,7 +30,7 @@ void ReturnError(int retcode, T err, char *func, bool bHex)
 	exit(retcode);
 }
 
-void WriteOutputToFile(string strOutput, bool bHTML)
+void WriteOutputToFile(const string &strOutput, bool bHTML)
 {
 	/* Write to file */
 
@@ -96,12 +96,12 @@ string ReadAndDecryptEJS(string strFile, int iKeyID, bool bNoIV)
 	return strRet;
 }
 
-vector<JHost> ParseEJS(const char *pData, DWORD dwDataSize)
+vector<JHost> ParseEJS(const string &strData)
 {
 	string strErr;
 	picojson::value rootValue;
 
-	picojson::parse(rootValue, pData, pData + dwDataSize, &strErr);
+	picojson::parse(rootValue, strData.begin(), strData.end(), &strErr);
 
 	if (!strErr.empty())
 		ReturnError(6, strErr.c_str(), "picojson::parse()");

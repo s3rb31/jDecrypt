@@ -12,8 +12,17 @@ public:
 	struct AESKEY128 
 	{
 		BLOBHEADER Header;
-		DWORD key_length;
-		BYTE key_bytes[16];
+		DWORD dwKeyLen;
+		BYTE pKey[16];
+
+		AESKEY128()
+		{
+			this->Header.bType = PLAINTEXTKEYBLOB;
+			this->Header.bVersion = CUR_BLOB_VERSION;
+			this->Header.reserved = 0;
+			this->Header.aiKeyAlg = CALG_AES_128;
+			this->dwKeyLen = 16;
+		}
 	};
 
 	~CryptAES();
