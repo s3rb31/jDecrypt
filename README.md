@@ -6,7 +6,7 @@ Usage:
 	  D:\Code\selfcode\jDecrypt\binary>jdecrypt.exe
 	  Coded bY S3RB31
 	  
-	  Usage:          jdecrypt.exe.exe [ARGS] [FILE]
+	  Usage:          jdecrypt.exe [ARGS] [FILE]
 	  -html           - Export to HTML (only AccountSettings.accounts.ejs)
 	  -keyid [KeyID]  - Set AES Key (1-7, 1 = default)
 	  -noiv           - Use zero as IV
