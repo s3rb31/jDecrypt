@@ -2,7 +2,7 @@
 #include <sstream>
 
 #include "JDecrypt.h"
-#include "HeaderImage.h"
+#include "HTMLHeaderImage.h"
 
 BYTE pKEY[8][16] =
 { 
@@ -139,15 +139,18 @@ string BuildHTMLExport(vector<JHost> vHosts)
 
 	sstrSize << vHosts.size();
 
-	string strHTML = string
-	(
-		"<html>\r\n<head>\r\n<meta http-equiv=\"content-type\" content=\"text/html; charset=ISO-8859-1\">\r\n<title>jDecrytp - ").append(sstrSize.str()).append(" Host Entry/ies</title>\r\n<style type=\"text/css\">\r\n#logo { margin:5% auto; background: url(data:image/png;base64,").append(HeaderImage).append(") no-repeat; background-size:944px 90px; width:944px; height:90px; }"
-		".datagrid { width:85%; margin-left: auto; margin-right: auto; font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 3px solid #006699; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }\r\n.datagrid table { border-collapse: collapse; text-align: left; width: 100%; }\r\n.datagrid table td, .datagrid table th { padding: 5px 15px; }\r\n"
-		".datagrid table thead { background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05,#006699), color-stop(1,#00557F)); background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F'); background-color: #006699; }\r\n"
-		".datagrid table thead th { background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05,#006699), color-stop(1,#00557F)); background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F'); background-color: #006699; }\r\n"
-		".datagrid table thead td { background: #3EE6E6; padding:5; color:#185A5A; font-size:16px; font-weight:bold; text-align:center; }\r\n.datagrid table thead td:first-child { -webkit-border-radius: 5px 0 0 0; -moz-border-radius: 5px 0 0 0; border-radius: 5px 0 0 0; }\r\n.datagrid table thead td:last-child { -webkit-border-radius: 0 5px 0 0; -moz-border-radius: 0 5px 0 0; border-radius: 0 5px 0 0; }\r\n"
-		".datagrid table tbody td { overlay: hidden; width: 33%; color: #00557F; font-size: 14px; font-weight: normal; text-align: center; }\r\n.datagrid table tbody .alt td { cursor: pointer; border-top: 1px solid #009999; border-bottom: 1px solid #009999; background: #AEF5F5; font-weight:bold; }\r\n.datagrid table tfoot td { padding: 0; background: #44FFEE; font-size: 10px; }\r\n</style>\r\n</head>\r\n"
-		"<body>\r\n<div id=\"logo\"></div>\r\n<div class=\"datagrid\"><table><thead>\r\n<tr><th></th><th></th><th></th></tr>\r\n<tr><td>Hoster</td><td>Username</td><td>Password</td></tr>\r\n</thead><tfoot>\r\n<tr><td colspan=\"3\">&nbsp;</td></tr>\r\n</tfoot>\r\n"
+	string strHTML = 
+		string("<html>\r\n<head>\r\n<meta http-equiv=\"content-type\" content=\"text/html; charset=ISO-8859-1\">\r\n<title>jDecrytp - ")
+		.append(sstrSize.str())
+		.append(" Host Entry/ies</title>\r\n<style type=\"text/css\">\r\n#logo { margin:5% auto; background: url(data:image/png;base64,")
+		.append(HTMLHeaderImage)
+		.append(") no-repeat; background-size:944px 90px; width:944px; height:90px; }"
+				".datagrid { width:85%; margin-left: auto; margin-right: auto; font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 3px solid #006699; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }\r\n.datagrid table { border-collapse: collapse; text-align: left; width: 100%; }\r\n.datagrid table td, .datagrid table th { padding: 5px 15px; }\r\n"
+				".datagrid table thead { background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05,#006699), color-stop(1,#00557F)); background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F'); background-color: #006699; }\r\n"
+				".datagrid table thead th { background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05,#006699), color-stop(1,#00557F)); background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F'); background-color: #006699; }\r\n"
+				".datagrid table thead td { background: #3EE6E6; padding:5; color:#185A5A; font-size:16px; font-weight:bold; text-align:center; }\r\n.datagrid table thead td:first-child { -webkit-border-radius: 5px 0 0 0; -moz-border-radius: 5px 0 0 0; border-radius: 5px 0 0 0; }\r\n.datagrid table thead td:last-child { -webkit-border-radius: 0 5px 0 0; -moz-border-radius: 0 5px 0 0; border-radius: 0 5px 0 0; }\r\n"
+				".datagrid table tbody td { overlay: hidden; width: 33%; color: #00557F; font-size: 14px; font-weight: normal; text-align: center; }\r\n.datagrid table tbody .alt td { cursor: pointer; border-top: 1px solid #009999; border-bottom: 1px solid #009999; background: #AEF5F5; font-weight:bold; }\r\n.datagrid table tfoot td { padding: 0; background: #44FFEE; font-size: 10px; }\r\n</style>\r\n</head>\r\n"
+				"<body>\r\n<div id=\"logo\"></div>\r\n<div class=\"datagrid\"><table><thead>\r\n<tr><th></th><th></th><th></th></tr>\r\n<tr><td>Hoster</td><td>Username</td><td>Password</td></tr>\r\n</thead><tfoot>\r\n<tr><td colspan=\"3\">&nbsp;</td></tr>\r\n</tfoot>\r\n"
 	);
 
 	for (size_t i = 0; i < vHosts.size(); i++)
