@@ -1,6 +1,6 @@
 #include "JDecrypt.h"
 
-void PrintKeys();
+void PrintKeys(); 
 void PrintUsage(const char *pFileName);
 
 int main(int argc, char **argv)
@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 	
 	if (bHTML)
 	{
-		vector<JHost> vHosts = ParseEJS(strDecrypted.c_str(), strDecrypted.size());
+		vector<JHost> vHosts = ParseEJS(strDecrypted);
 		strDecrypted = BuildHTMLExport(vHosts);
 	}
 

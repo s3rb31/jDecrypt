@@ -13,12 +13,9 @@ CryptAES::CryptAES(BYTE *pKey, BYTE *pIV)
 	if (CryptAcquireContext(&this->hProv, NULL, MS_ENH_RSA_AES_PROV, PROV_RSA_AES, 0))
 	{
 		AESKEY128 AESBlob;
-		AESBlob.Header.bType = PLAINTEXTKEYBLOB;
-		AESBlob.Header.bVersion = CUR_BLOB_VERSION;
-		AESBlob.Header.reserved = 0;
-		AESBlob.Header.aiKeyAlg = CALG_AES_128;
-		AESBlob.key_length = 16;
-		memcpy_s(AESBlob.key_bytes, 16, pKey, 16);
+
+		for (int i = 0; i < 16; i++)
+			AESBlob.pKey[i] = pKey[i];
 
 		CryptImportKey(this->hProv, reinterpret_cast<BYTE*>(&AESBlob), sizeof(AESBlob), NULL, 0, &this->hKey);
 
