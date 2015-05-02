@@ -71,13 +71,16 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>kernel32.lib;user32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy build\bin\$(Platform)\$(Configuration)\$(ProjectName).exe ..\..\binary\$(ProjectName).exe /Y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="source\FileIO.h" />
     <ClInclude Include="source\JDecrypt.h" />
     <ClInclude Include="source\JTypes.h" />
     <ClInclude Include="source\CryptAES.h" />
-    <ClInclude Include="source\HeaderImage.h" />
+    <ClInclude Include="source\HTMLHeaderImage.h" />
     <ClInclude Include="source\PicoJSON.h" />
   </ItemGroup>
   <ItemGroup>

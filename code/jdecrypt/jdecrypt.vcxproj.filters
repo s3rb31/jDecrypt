@@ -35,7 +35,7 @@
     <ClInclude Include="source\PicoJSON.h">
       <Filter>Headerdateien\Libs</Filter>
     </ClInclude>
-    <ClInclude Include="source\HeaderImage.h">
+    <ClInclude Include="source\HTMLHeaderImage.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
